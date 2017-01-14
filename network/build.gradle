@@ -1,3 +1,8 @@
+plugins {
+    id "com.jfrog.bintray" version "1.7.3"
+    id "com.github.dcendents.android-maven" version "1.4.1"
+}
+
 apply plugin: 'com.android.library'
 
 android {
@@ -33,3 +38,52 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 }
+
+bintray {
+    user='stoyan'
+    key='20badd0acc0dec89b151e9bb226ac8d851b755fd'
+    pkg {
+        publish = true
+        publicDownloadNumbers = true
+        version {
+            desc = "Android library for contextually aware applications"
+            gpg {
+                sign = true //Determines whether to GPG sign the files. The default is false
+                passphrase = '!b4i#5JtOk#^Nec^WtoKug2Nc*IHT'
+                //Optional. The passphrase for GPG signing'
+            }
+        }
+    }
+}
+
+//bintray.user='stoyan'
+//bintray.key='20badd0acc0dec89b151e9bb226ac8d851b755fd'
+//bintray.gpg.password='!b4i#5JtOk#^Nec^WtoKug2Nc*IHT'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'network'
+
+    publishedGroupId = 'com.tubitv.signal'
+    libraryName = 'network'
+    artifact = 'network'
+
+    libraryDescription = 'Android library for contextually aware applications'
+
+    siteUrl = 'https://github.com/adRise/signal'
+    gitUrl = 'https://github.com/adRise/signal.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'stoyan'
+    developerName = 'Stoyan Dimitrov'
+    developerEmail = 'android@tubitv.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

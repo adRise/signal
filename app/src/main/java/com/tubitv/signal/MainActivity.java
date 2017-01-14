@@ -1,9 +1,7 @@
-package com.tubitv.github.signal;
+package com.tubitv.signal;
 
 import android.app.Activity;
 import android.os.Bundle;
-
-import com.tubitv.signal.R;
 
 public class MainActivity extends Activity {
 

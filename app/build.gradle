@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
     defaultConfig {
-        applicationId "com.tubitv.github.signal"
+        applicationId "com.tubitv.signal"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
